@@ -1,0 +1,510 @@
+/* Основна сторінка*/
+.falling-word {
+  position: absolute;
+  top: -50px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation-name: fall;
+  animation-timing-function: linear;
+
+  /* базовий колір */
+  color: #ff3366;
+
+  /* неоновий ефект */
+  text-shadow: 
+    0 0 5px #ff3366,
+    0 0 10px #ff6699,
+    0 0 20px #ff99cc,
+    0 0 40px #ff99cc;
+
+  /* плавне мерехтіння */
+  animation: fall linear forwards, glow 2s infinite alternate;
+}
+
+@keyframes fall {
+  from { top: -50px; opacity: 1; }
+  to   { top: 100vh; opacity: 0.3; }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px #ff3366,
+      0 0 10px #ff6699,
+      0 0 20px #ff99cc,
+      0 0 40px #ff99cc;
+  }
+  to {
+    text-shadow: 
+      0 0 10px #ff6699,
+      0 0 20px #ff99cc,
+      0 0 30px #ff66b2,
+      0 0 60px #ff66b2;
+  }
+}
+
+
+@keyframes fall {
+    to {
+        transform: translateY(200vh);
+    
+    }
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #0a0f1e 0%, #050608 100%);
+
+}
+
+/* зірки */
+body::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  box-shadow: 
+    80px 150px #fff, 
+    200px 300px #ddd, 
+    500px 120px #bbb, 
+    700px 600px #fff, 
+    1100px 250px #aaa,
+    1300px 500px #ccc,
+    400px 700px #eee;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.1; }
+  to { opacity: 1; }
+}
+
+
+/* Панель */
+#password-panel {
+  background: rgba(37, 37, 37, 0.7);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  width: 250px;
+  transition: transform 1.5s ease, opacity 1.5s ease;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(73, 70, 73, 0.6);
+  opacity: 0.7;
+}
+
+/* Поле вводу */
+#password-display {
+  height: 40px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #ff3366;
+  text-align: center;
+  letter-spacing: 5px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  line-height: 40px;
+}
+
+/* Кнопки */
+#keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 10px;
+  justify-content: center;
+}
+
+#keypad button {
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background: #ff3366;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff6699;
+  transition: 0.2s;
+}
+
+#keypad button:hover {
+  background: #ff6699;
+  box-shadow: 0 0 20px #ff99cc;
+}
+
+/* Конверт
+
+#envelope-container {
+  position: absolute;
+  bottom: -300px;  
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px; 
+  height: auto;
+  transition: bottom 1.5s ease-out;
+  z-index: 10;
+  display: none; 
+}
+
+#envelope {
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+
+#envelope-lid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform-origin: top center;
+  transition: transform 1s ease-out;
+  z-index: 0;
+}
+
+#letter {
+  position: absolute;
+  width: 500px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.open-lid #envelope-lid {
+  transform: rotateX(180deg);
+}
+
+
+.show-letter #letter {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-150px) scale(1.2);
+}
+*/
+
+#plate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  background: #333;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 1200px;
+  height: 600px;
+ 
+  box-shadow:     
+    0 0 5px #ad0831,
+    0 0 10px #b1325c,
+    0 0 20px #9b245f,
+    0 0 40px #9c3066;;
+}
+
+#main-photo {
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 15px; 
+  position: relative;
+  left: -420px;
+  top: -10px;
+  border-style:solid;
+ border-color: #000000;
+
+}
+
+.scene-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.scene-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Фон позаду контенту */
+    
+    /* Твоє фонове зображення */
+    background-image: url('Untitled.png');
+     background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+    /* Затемнення фону */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Затемнення */
+    }
+}
+
+       .timer {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 5px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.7);
+    }
+    
+     
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      position: fixed;
+      top: 430px;
+      left: 480px;
+      
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+      
+    }
+
+    .tab-content {
+      display: none;
+      margin-top: 15px;
+      font-size: 30px;
+      line-height: 1.5;
+      animation: fadeIn 0.5s ease;
+      
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+    h2{
+      color: #9c3066;
+      position: fixed;
+      top: -50px;
+      left: 135px;
+      font-size: 100px;
+      padding: 40px;
+      font-family: Bradley Hand, cursive;
+    }
+    #timer{
+      position: relative;
+      top: 190px;
+      left: -10px;
+      font-size: 200px;
+      font-family: 'Arial', sans-serif;
+      color: #bd3378;; /* бордовий */
+      text-shadow:
+        0 0 5px #b3003c,
+        0 0 10px #b3003c,
+        0 0 20px #ff004f,
+        0 0 40px #ff004f,
+        0 0 80px #ff004f;
+      animation: flicker 1.5s infinite alternate, heartbeat 1.5s infinite ;
+    }
+
+      @keyframes flicker {
+      0%   { opacity: 1; text-shadow: 0 0 5px #b3003c; }
+      50%  { opacity: 0.8; text-shadow: 0 0 10px #ff004f; }
+      100% { opacity: 1; text-shadow: 0 0 5px  #ff004f; }
+      }
+
+   .player {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width: 150px; /* зменшена ширина */
+    background-color: #222;
+    padding: 3px;
+    border-radius: 50px;
+    box-shadow: 0 0 8px #800020, 0 0 16px #a00030;
+    z-index: 9999;
+}
+
+/* Зменшення масштабу стандартних controls */
+audio {
+    width: 100%;
+    transform: scale(0.8); /* зменшує плеєр на 20% */
+    transform-origin: bottom right; /* масштабування від правого нижнього кута */
+    outline: none;
+    border-radius: 8px;
+}
+
+/* Стилізація панелі контролів для WebKit-браузерів */
+audio::-webkit-media-controls-panel {
+    background-color: #333;
+    border-radius: 8px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider {
+    filter: hue-rotate(340deg) brightness(1.2);
+}
+
+/* Вкладки */
+.tabs {
+  margin: 20px;
+}
+
+.tab-btn {
+  background: linear-gradient(45deg, #9c3066, #a52163);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 25px;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #9c3066, 0 0 20px #af2c6e;;
+  text-shadow: 0 0 5px #9c3066;;
+  font-family: Bradley Hand, cursive;
+  
+}
+
+.tab-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.9), 0 0 40px rgba(255, 60, 60, 0.7);
+}
+
+.tab-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 60, 60, 0.6);
+}
+
+#wordsBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #9c3066;;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 32px;
+  z-index: 200;
+}
+
+/* Лист */
+#letterOnly {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 700px; /* трохи більший */
+  cursor: pointer;
+  z-index: 1001;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#letterOnly.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+#blurOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0px);
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+  z-index: 1000;
+}
+
+#blurOverlay.active {
+  opacity: 1;
+  backdrop-filter: blur(5px);
+  pointer-events: auto;
+}
+
+.gallery-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        z-index: 1000;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      
+      .gallery-img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: transform 0.3s;
+      }
+      
+      .gallery-img:hover {
+        transform: scale(1.05);
+      }
+      
+      .close-gallery {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #ff4757;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }

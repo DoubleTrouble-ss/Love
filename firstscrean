@@ -1,0 +1,56 @@
+ const words = [
+  "Love You",
+  "Miss You",
+  "Forever ❤️",
+  "My Star ✨",
+  "Only You",
+  "Sweetheart",
+  "Dream",
+  "My Angel",
+  "With You",
+  "Always 💖",
+  "Hug Me",
+  "Kiss 💋",
+  "Shine",
+  "My World 🌍",
+  "Together",
+  "Infinity ",
+  "Believe",
+  "Destiny",
+  "My Queen 👑",
+  "Heart 💕"
+];
+
+    function createFallingWord() {
+      const randomWord = words[Math.floor(Math.random() * words.length)];
+      const wordElement = document.createElement('div');
+      wordElement.textContent = randomWord;
+      wordElement.classList.add('falling-word');
+
+      // випадковий left
+      const maxLeft = window.innerWidth - 100;
+      const randomLeft = Math.random() * maxLeft;
+      wordElement.style.left = `${randomLeft}px`;
+
+      // випадкова швидкість
+      const randomDuration = 5 + Math.random() * 10;
+      wordElement.style.animationDuration = `${randomDuration}s`;
+
+      // випадкове зміщення по Z
+      const randomZ = Math.random() * 600 - 300; // від -300px до +300px
+      wordElement.style.transform = `translateZ(${randomZ}px)`;
+
+      document.getElementById('falling-words-container').appendChild(wordElement);
+
+      setTimeout(() => {
+        wordElement.remove();
+      }, randomDuration * 1000);
+    }
+
+    // Створюємо нові слова
+    setInterval(createFallingWord, 300);
+
+    // Одразу трохи слів на старті
+    for (let i = 0; i < 15; i++) {
+      setTimeout(createFallingWord, i * 500);
+    }
