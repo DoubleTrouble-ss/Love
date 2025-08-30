@@ -507,4 +507,116 @@ audio::-webkit-media-controls-volume-slider {
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
+
       }
+/* ========================= */
+/* Мобільна адаптивність */
+/* ========================= */
+@media (max-width: 600px) {
+
+  /* Панель паролю */
+  #password-panel {
+    width: 90%;
+    padding: 20px;
+    top: 60%;
+  }
+
+  #keypad {
+    grid-template-columns: repeat(3, 50px);
+    gap: 8px;
+  }
+
+  #keypad button {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  #password-display {
+    font-size: 1.2rem;
+    line-height: 35px;
+  }
+
+  /* Перша сцена */
+  #envelope-container {
+    width: 80%;
+    bottom: -200px;
+  }
+
+  #letter, #envelope, #envelope-lid {
+    width: 100%;
+  }
+
+  #plate {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #main-photo {
+    width: 200px;
+    left: -10px;
+    top: 0;
+  }
+
+  #timer {
+    font-size: 100px;
+    top: 100px;
+    left: 0;
+  }
+
+  .tabs {
+    top: 250px;
+    left: 10px;
+    gap: 15px;
+  }
+
+  /* Галерея та альбом */
+  .gallery-container, .album-container {
+    padding: 10px;
+  }
+
+  .slider-wrapper {
+    width: 95%;
+    height: 60vh;
+  }
+
+  .slider-img {
+    max-width: 100%;
+    max-height: 50vh;
+  }
+
+  .photo-counter {
+    bottom: 50px;
+    font-size: 14px;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .album-thumb {
+    height: 100px;
+  }
+
+  #wordsBtn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* Аудіоплеєр */
+  .player {
+    width: 120px;
+    bottom: 10px;
+    right: 5px;
+  }
+
+  audio {
+    transform: scale(0.7);
+  }
+}
